@@ -3,35 +3,6 @@ Creating a Game with the R-Type Engine
 
 This guide will help you create a new game using the R-Type game engine. We'll walk through setting up the engine, creating game elements, and adding some basic gameplay features.
 
-Getting Started
----------------
-
-First, you need to set up the engine on your machine.
-
-1. **Clone the Engine Repository**: Download the engine source code.
-
-   .. code-block:: bash
-
-      git clone https://github.com/yourusername/rtype-engine.git
-      cd rtype-engine
-
-2. **Install Dependencies**: Install the required libraries like SFML for graphics and Boost for networking.
-
-   .. code-block:: bash
-
-      ./setup.sh  # Run setup script
-      # Or install dependencies manually
-      sudo apt-get install libsfml-dev libboost-all-dev
-
-3. **Build the Engine**: Now compile the engine using `make` or CMake.
-
-   .. code-block:: bash
-
-      make  # or cmake .
-      ./build/mygameengine
-
-Now that the engine is ready, you can start creating your game.
-
 Creating Game Elements
 -----------------------
 
