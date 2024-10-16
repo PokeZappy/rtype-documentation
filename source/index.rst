@@ -7,8 +7,8 @@ Welcome to R-Type's Documentation!
 
    protocol
    game_description
-   engine_doc
    lib_configuration
+   engine_doc
    create_game_with_engine
    install_and_launch
 

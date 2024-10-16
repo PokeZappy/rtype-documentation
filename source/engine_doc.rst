@@ -18,9 +18,16 @@ The engine uses an Entity-Component System (ECS) architecture, which is a design
 
 - **Entities**: These are the objects in the game world. Each entity is a unique identifier that can have multiple components attached to it.
 - **Components**: These are data containers that hold the properties and state of an entity. Components do not contain any behavior.
-- **Systems**: These are the logic and behavior of the game. Systems operate on entities with specific components and update their state.
+- **Systems**: These are the logic and behavior of the game. Systems are managed by an event bus. The only condition to subscribe is
+- **Events**: A Event is a message that is published by the event bus. The event bus is a singleton that is used to publish events and subscribe to them.
 
 The ECS architecture allows for a clean separation of data and behavior, making it easier to manage and extend the game engine.
+
+Event Bus
+---------
+
+The EventBus permit that when a collision is detected, the collision event is published and the consequences is that systems linked to it will be triggered.
+
 
 Customization
 -------------

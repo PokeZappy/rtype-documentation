@@ -36,6 +36,49 @@ Finally, you need to add systems that control how entities behave. For example, 
 
       movement
 
+Example Creating Game Elements
+------------------------------
+
+For example, we want to create a player who has health and movement.
+
+1. First of all, we need to include "Engine.hpp"
+
+    .. code-block:: cpp
+
+            #include "Engine.hpp"
+
+2. Then you can create an Entity player
+
+    .. code-block:: cpp
+
+           std::shared<potEngine::AEntity> player = potEngine::engine.createEntity();
+
+
+3. Create your component in a separate file who will inherit of potEngine::AComponent. For the health Component.
+
+    .. code-block:: cpp
+        class HealthComponent: public potEngine::AComponent {
+            public:
+                _health = 10;
+
+                HealthComponent();
+                ~HealthComponent();
+        }
+
+    But we provide some default components like the position Component that you can call already using the potEngine like this : potEngine::PositionComponent.
+
+
+4. Add the component to the player entity. How do we do it ?
+
+    .. code-block:: cpp
+        std::shared<potEngine::PositionComponent> position = std::make_shared<potEngine::PositionComponent>(0.0, 0.0);
+        std::shared<HealthComponent> position = std::make_shared<HealthComponent>();
+        engine.addComponent(player, position);
+        engine.addComponent(player, health);
+
+
+Now we have a entity player that have a position and health. You can add as much components and entities that you want. Now that we have that, we can work with systems to add interactivity.
+
 Making the Game Interactive
 ----------------------------
 

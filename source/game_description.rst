@@ -20,6 +20,7 @@ Players control their spaceship using keyboard inputs. Here are the main control
 - **Move Left**: Use the `Q` key to move the ship to the left.
 - **Move Right**: Use the `D` key to move the ship to the right.
 - **Shoot**: Press the `Spacebar` to fire your weapons.
+- **Launch Game**: Press the `L` to launche the round.
 
 ### Enemies
 

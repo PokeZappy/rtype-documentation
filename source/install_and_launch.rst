@@ -8,7 +8,7 @@ System Requirements
 
 - **Operating System**: macOS, Windows, Linux
 - **Dependencies**: Ensure you have the following dependencies installed:
-  - C++17 or higher
+  - C++20 or higher
   - SFML 2.5+
   - A UDP-capable network
 
@@ -39,6 +39,17 @@ Installation Steps
    .. code-block:: bash
 
       ./r-type_client -ip [ip] -p [port]
+
+Debug Mode
+----------
+
+Build the project using CMake with debug:
+
+    .. code-block:: bash
+
+        cmake -S . -B build-debug -DCMAKE_BUILD_TYPE=Debug
+        cd build-debug
+
 
 
 Multiplayer Setup
