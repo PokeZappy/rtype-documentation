@@ -8,6 +8,7 @@ Welcome to R-Type's Documentation!
    protocol
    game_description
    engine_doc
+   lib_configuration
    create_game_with_engine
    install_and_launch
 
@@ -24,6 +25,8 @@ Sections
 - **Game Overview**: Learn about the R-Type game, its gameplay mechanics, and the core concepts.
 
 - **Game Engine Documentation**: Detailed technical documentation on the engine powering the R-Type game.
+
+- **Library Configuration**: Information on the libraries used in the project.
 
 - **Creating a New Game with the Engine**: A guide on how to use the R-Type engine to create your own game.
 
