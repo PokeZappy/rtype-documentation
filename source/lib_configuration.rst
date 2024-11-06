@@ -51,7 +51,7 @@ We chose SFML for handling all the graphics, input, and audio in our game. SFML 
 .. list-table::
    :header-rows: 1
 
-   * - Criterion
+   * - X
      - SFML
      - SDL
      - Allegro
@@ -90,7 +90,7 @@ We use TOML to handle configuration files in our project. This library helps us 
 .. list-table::
    :header-rows: 1
 
-   * - Criterion
+   * - X
      - TOML
      - JSON
      - YAML
@@ -126,7 +126,7 @@ We use cereal for serializing and deserializing messages between components. The
 .. list-table::
    :header-rows: 1
 
-   * - Criterion
+   * - X
      - Cereal
      - Boost.Serialization
      - Protobuf
