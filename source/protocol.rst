@@ -111,6 +111,11 @@ Client Authentication
 
 The **CONNECTION** message is like a handshake between the client and server. Once connected, the client gets a **CLIENT_ID** that it will use for all communication. This helps avoid actions from clients that aren't properly connected.
 
+Serialization with Cereal
+-------------------------
+
+To ensure efficient data transmission, the R-Type game uses the **Cereal** library for message serialization. Cereal provides a simple way to serialize and deserialize objects into a format suitable for network transmission. It allows both the client and server to efficiently send and receive complex data structures by converting them into a byte stream that can be transmitted over the network.
+
 ---
 
 This specification ensures fast, secure, and reliable communication between players and the game server.

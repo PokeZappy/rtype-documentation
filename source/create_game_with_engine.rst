@@ -4,9 +4,9 @@ Creating a Game with the R-Type Engine
 This guide will help you create a new game using the R-Type game engine. We'll walk through setting up the engine, creating game elements, and adding some basic gameplay features.
 
 Creating Game Elements
-----------------------
+-----------------------
 
-The engine uses an **Entity-Component System (ECS)** to organize game objects.
+The engine uses something called **Entity-Component System (ECS)** to organize game objects.
 
 - **Entities**: These are things in the game (like players, enemies, bullets).
 - **Components**: These are properties of entities (like position, speed, health).
@@ -14,105 +14,98 @@ The engine uses an **Entity-Component System (ECS)** to organize game objects.
 
 ### Step 1: Create Entities
 
-Define your game objects (entities). For example, to create a player and enemies:
+You first need to define your game objects (entities). For example, to create a player and enemies:
 
-   ::
+.. code-block:: cpp
 
-      auto player = engine.createEntity();
-      auto enemy = engine.createEntity();
+      create_entity
 
 ### Step 2: Add Components
 
-Give each entity some properties (components). For example, to give a position to a player and enemy:
+Next, give each entity some properties (components). For example, you can give them positions or graphics.
 
-   ::
+.. code-block:: cpp
 
-      player->addComponent<PositionComponent>(0.0f, 0.0f);
-      enemy->addComponent<PositionComponent>(5.0f, 5.0f);
+      player.components
 
 ### Step 3: Add Logic with Systems
 
-Add systems that control how entities behave. For example, to create a system for player movement:
+Finally, you need to add systems that control how entities behave. For example, you might create a system to move the player when you press a key.
 
-   ::
+.. code-block:: cpp
 
-      engine.addSystem<MovementSystem>();
+      movement
 
-Example: Creating Game Elements
--------------------------------
+Example Creating Game Elements
+------------------------------
 
-Here’s a more detailed example where we create a player with health and movement components:
+For example, we want to create a player who has health and movement.
 
-1. Include the engine header file:
+1. First of all, we need to include "Engine.hpp"
 
-   ::
+.. code-block:: cpp
 
-      #include "Engine.hpp"
+            #include "Engine.hpp"
 
-2. Create a player entity:
+2. Then you can create an Entity player
 
-   ::
+.. code-block:: cpp
 
-      auto player = engine.createEntity();
+           std::shared<potEngine::AEntity> player = potEngine::engine.createEntity();
 
-3. Define a custom health component or use predefined components if available:
 
-   ::
+3. Create your component in a separate file who will inherit of potEngine::AComponent. For the health Component.
 
-      class HealthComponent : public potEngine::AComponent {
-      public:
-          int health = 10;
+.. code-block:: cpp
+        class HealthComponent: public potEngine::AComponent {
+            public:
+                _health = 10;
 
-          HealthComponent() = default;
-          ~HealthComponent() = default;
-      };
+                HealthComponent();
+                ~HealthComponent();
+        }
 
-   You can also use built-in components like `PositionComponent`:
+    But we provide some default components like the position Component that you can call already using the potEngine like this : potEngine::PositionComponent.
 
-   ::
 
-      auto position = std::make_shared<potEngine::PositionComponent>(0.0f, 0.0f);
+4. Add the component to the player entity. How do we do it ?
 
-4. Add components to the player entity:
+.. code-block:: cpp
+        std::shared<potEngine::PositionComponent> position = std::make_shared<potEngine::PositionComponent>(0.0, 0.0);
+        std::shared<HealthComponent> position = std::make_shared<HealthComponent>();
+        engine.addComponent(player, position);
+        engine.addComponent(player, health);
 
-   ::
 
-      auto health = std::make_shared<HealthComponent>();
-      player->addComponent(position);
-      player->addComponent(health);
-
-Now we have a `player` entity with position and health. You can add as many components and entities as needed. Once set, you can work with systems to add interactivity.
+Now we have a entity player that have a position and health. You can add as much components and entities that you want. Now that we have that, we can work with systems to add interactivity.
 
 Making the Game Interactive
----------------------------
+----------------------------
 
 ### Handling Input
 
-To make the game interactive, use the **Input System** to control the player. For example, to move the player with arrow keys:
+To make the game interactive, you can use the **Input System** to control the player. For example, move the player when pressing the arrow keys.
 
-   ::
-
-      engine.addSystem<InputSystem>();
+.. code-block:: cpp
+      input
 
 ### Adding Enemies and Collisions
 
-Create enemy entities and add a collision system to detect interactions between the player and enemies. If a collision happens, you can reduce health or trigger other events.
+You can create enemy entities and make a system to check for collisions between the player and enemies. If a collision happens, you can reduce health or trigger other events.
 
-   ::
-
-      engine.addSystem<CollisionSystem>();
+.. code-block:: cpp
+      colision
 
 Networking with the Engine
---------------------------
+---------------------------
 
-If you want to make your game multiplayer, the engine has a **Networking Module** that enables communication between players and the server.
+If you want to make your game multiplayer, the engine has a **Networking Module** that allows communication between players and the server.
 
 ### Setting Up the Server
 
-1. **Start the Game Server**: The server manages the game state and sends updates to clients.
+1. **Start the Game Server**: The server manages the game state and sends updates to clients (players).
 
-   ::
-
+.. code-block:: bash
       ./rtype-server
 
-2. **Client-Server Communication**: The engine uses the UDP protocol to send messages between the server and clients. You can customize the communication protocol if needed.
+2. **Client-Server Communication**: The engine uses the UDP protocol to send messages between the server and clients. You can customize the communication protocol for your game if needed.
