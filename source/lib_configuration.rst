@@ -11,24 +11,33 @@ We use vcpkg as our package manager to simplify the process of installing and ma
 - **Cross-Platform**: vcpkg supports multiple platforms (Windows, macOS, Linux), which makes it easy to maintain the project across different systems.
 - **Library Updates**: vcpkg keeps track of library versions, making it simple to update to newer versions without breaking the project.
 
-+------------------------+--------------------------+---------------------+--------------------+
-| Critère                | vcpkg                    | Conan               | Homebrew           |
-+========================+==========================+=====================+====================+
-| **Plateformes**        | Windows, macOS, Linux    | Windows, macOS,     | Principalement     |
-|                        |                          | Linux               | macOS, Linux       |
-+------------------------+--------------------------+---------------------+--------------------+
-| **Facilité             | Installation facile et   | Configurable mais   | Très simple sur    |
-| d’utilisation**        | commandes simples        | plus complexe       | macOS              |
-+------------------------+--------------------------+---------------------+--------------------+
-| **Gestion des          | Oui                      | Oui                 | Oui, mais moins    |
-| versions**             |                          |                     | centralisé         |
-+------------------------+--------------------------+---------------------+--------------------+
-| **Support des          | Large sélection de       | Large sélection     | Principalement     |
-| dépendances**          | bibliothèques            | avec flexibilité    | pour macOS         |
-+------------------------+--------------------------+---------------------+--------------------+
-| **Suivi des mises      | Simple et rapide à gérer | Plus complexe       | Dépend des         |
-| à jour**               |                          |                     | taprooms (dépôts)  |
-+------------------------+--------------------------+---------------------+--------------------+
+.. list-table::
+   :header-rows: 1
+
+   * - **X**
+     - **vcpkg**
+     - **Conan**
+     - **Homebrew**
+   * - **Platforms**
+     - Windows, macOS, Linux
+     - Windows, macOS, Linux
+     - Mainly macOS, Linux
+   * - **Ease of Use**
+     - Easy installation with simple commands
+     - Configurable but more complex
+     - Very simple on macOS
+   * - **Version Management**
+     - Yes
+     - Yes
+     - Yes, but less centralized
+   * - **Dependency Support**
+     - Large selection of libraries
+     - Large selection with flexibility
+     - Mainly for macOS
+   * - **Update Management**
+     - Simple and quick to manage
+     - More complex
+     - Depends on taprooms (repositories)
 
 SFML (Simple and Fast Multimedia Library)
 ------------------------------------------
@@ -38,6 +47,16 @@ We chose SFML for handling all the graphics, input, and audio in our game. SFML 
 - **2D Graphics**: R-Type is a 2D game, so SFML's support for 2D rendering makes it perfect for our needs.
 - **Cross-Platform**: It works on Windows, macOS, and Linux, which makes it easy to develop and run the game on different operating systems.
 - **Simple to Use**: SFML is easier to use than some other graphics libraries, which saves time in development.
+
+| Criterion                | SFML                      | SDL                  | Allegro            |
+|--------------------------|---------------------------|----------------------|--------------------|
+| **Platforms**             | Windows, macOS, Linux     | Windows, macOS,      | Windows, macOS,    |
+|                          |                           | Linux                | Linux              |
+| **2D Support**            | Yes                       | Yes                  | Yes                |
+| **Built-in Audio**        | Yes                       | Yes                  | Yes                |
+| **Ease of Use**           | Very simple               | Relatively complex   | Moderately simple  |
+| **Performance for 2D games** | Very good                | Good but slightly heavier | Good, but more focused on simple 2D |
+
 
 SFML also includes built-in features for handling player input, such as detecting key presses and mouse movement, which are essential for the game controls.
 
