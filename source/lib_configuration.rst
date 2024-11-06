@@ -7,18 +7,37 @@ Vcpkg (Package Manager)
 ------------------------
 We use vcpkg as our package manager to simplify the process of installing and managing external libraries. It helps by:
 
-- ** Easy Setup: Installing libraries like SFML and TOML is much easier with vcpkg. You don’t have to manually download, configure, and build them.
-- ** Cross-Platform: vcpkg supports multiple platforms (Windows, macOS, Linux), which makes it easy to maintain the project across different systems.
-- ** Library Updates: vcpkg keeps track of library versions, making it simple to update to newer versions without breaking the project.
+- **Easy Setup**: Installing libraries like SFML and TOML is much easier with vcpkg. You don’t have to manually download, configure, and build them.
+- **Cross-Platform**: vcpkg supports multiple platforms (Windows, macOS, Linux), which makes it easy to maintain the project across different systems.
+- **Library Updates**: vcpkg keeps track of library versions, making it simple to update to newer versions without breaking the project.
+
++------------------------+--------------------------+---------------------+--------------------+
+| Critère                | vcpkg                    | Conan               | Homebrew           |
++========================+==========================+=====================+====================+
+| **Plateformes**        | Windows, macOS, Linux    | Windows, macOS,     | Principalement     |
+|                        |                          | Linux               | macOS, Linux       |
++------------------------+--------------------------+---------------------+--------------------+
+| **Facilité             | Installation facile et   | Configurable mais   | Très simple sur    |
+| d’utilisation**        | commandes simples        | plus complexe       | macOS              |
++------------------------+--------------------------+---------------------+--------------------+
+| **Gestion des          | Oui                      | Oui                 | Oui, mais moins    |
+| versions**             |                          |                     | centralisé         |
++------------------------+--------------------------+---------------------+--------------------+
+| **Support des          | Large sélection de       | Large sélection     | Principalement     |
+| dépendances**          | bibliothèques            | avec flexibilité    | pour macOS         |
++------------------------+--------------------------+---------------------+--------------------+
+| **Suivi des mises      | Simple et rapide à gérer | Plus complexe       | Dépend des         |
+| à jour**               |                          |                     | taprooms (dépôts)  |
++------------------------+--------------------------+---------------------+--------------------+
 
 SFML (Simple and Fast Multimedia Library)
 ------------------------------------------
 
 We chose SFML for handling all the graphics, input, and audio in our game. SFML is a good fit because:
 
-- ** 2D Graphics: R-Type is a 2D game, so SFML's support for 2D rendering makes it perfect for our needs.
-- ** Cross-Platform: It works on Windows, macOS, and Linux, which makes it easy to develop and run the game on different operating systems.
-- ** Simple to Use: SFML is easier to use than some other graphics libraries, which saves time in development.
+- **2D Graphics**: R-Type is a 2D game, so SFML's support for 2D rendering makes it perfect for our needs.
+- **Cross-Platform**: It works on Windows, macOS, and Linux, which makes it easy to develop and run the game on different operating systems.
+- **Simple to Use**: SFML is easier to use than some other graphics libraries, which saves time in development.
 
 SFML also includes built-in features for handling player input, such as detecting key presses and mouse movement, which are essential for the game controls.
 
@@ -26,17 +45,17 @@ TOML
 -----
 We use TOML to handle configuration files in our project. This library helps us store and manage settings or game options. The reasons we chose TOML are:
 
-- ** Readable Format: TOML's syntax is designed to be human-readable and easy to edit, making it simple to update or change settings.
-- ** Lightweight and Flexible: TOML is compact and doesn't consume too much space or memory, which keeps the game efficient.
-- ** Compatibility: TOML's straightforward structure makes it easy to parse and flexible for adding new configuration options as the game evolves.
+- **Readable Format**: TOML's syntax is designed to be human-readable and easy to edit, making it simple to update or change settings.
+- **Lightweight and Flexible**: TOML is compact and doesn't consume too much space or memory, which keeps the game efficient.
+- **Compatibility**: TOML's straightforward structure makes it easy to parse and flexible for adding new configuration options as the game evolves.
 
 Cereal (Serialization Library)
 -------------------------------
 We use cereal for serializing and deserializing messages between components. The reasons we chose cereal include:
 
-- ** Lightweight Serialization: cereal is optimized for performance, which is essential in real-time multiplayer games like ours.
-- ** Cross-Platform: It is compatible with multiple platforms, making it adaptable to various development environments.
-- ** Supports Multiple Formats: cereal can serialize data in different formats, allowing flexibility in data storage and transmission.
+- **Lightweight Serialization**: cereal is optimized for performance, which is essential in real-time multiplayer games like ours.
+- **Cross-Platform**: It is compatible with multiple platforms, making it adaptable to various development environments.
+- **Supports Multiple Formats**: cereal can serialize data in different formats, allowing flexibility in data storage and transmission.
 
 Why These Libraries?
 ---------------------
