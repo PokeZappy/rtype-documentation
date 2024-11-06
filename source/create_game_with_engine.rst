@@ -16,7 +16,7 @@ The engine uses an **Entity-Component System (ECS)** to organize game objects.
 
 Define your game objects (entities). For example, to create a player and enemies:
 
-   .. code-block:: cpp
+   ::
 
       auto player = engine.createEntity();
       auto enemy = engine.createEntity();
@@ -25,7 +25,7 @@ Define your game objects (entities). For example, to create a player and enemies
 
 Give each entity some properties (components). For example, to give a position to a player and enemy:
 
-   .. code-block:: cpp
+   ::
 
       player->addComponent<PositionComponent>(0.0f, 0.0f);
       enemy->addComponent<PositionComponent>(5.0f, 5.0f);
@@ -34,7 +34,7 @@ Give each entity some properties (components). For example, to give a position t
 
 Add systems that control how entities behave. For example, to create a system for player movement:
 
-   .. code-block:: cpp
+   ::
 
       engine.addSystem<MovementSystem>();
 
@@ -45,19 +45,19 @@ Here’s a more detailed example where we create a player with health and moveme
 
 1. Include the engine header file:
 
-   .. code-block:: cpp
+   ::
 
       #include "Engine.hpp"
 
 2. Create a player entity:
 
-   .. code-block:: cpp
+   ::
 
       auto player = engine.createEntity();
 
 3. Define a custom health component or use predefined components if available:
 
-   .. code-block:: cpp
+   ::
 
       class HealthComponent : public potEngine::AComponent {
       public:
@@ -69,13 +69,13 @@ Here’s a more detailed example where we create a player with health and moveme
 
    You can also use built-in components like `PositionComponent`:
 
-   .. code-block:: cpp
+   ::
 
       auto position = std::make_shared<potEngine::PositionComponent>(0.0f, 0.0f);
 
 4. Add components to the player entity:
 
-   .. code-block:: cpp
+   ::
 
       auto health = std::make_shared<HealthComponent>();
       player->addComponent(position);
@@ -90,7 +90,7 @@ Making the Game Interactive
 
 To make the game interactive, use the **Input System** to control the player. For example, to move the player with arrow keys:
 
-   .. code-block:: cpp
+   ::
 
       engine.addSystem<InputSystem>();
 
@@ -98,7 +98,7 @@ To make the game interactive, use the **Input System** to control the player. Fo
 
 Create enemy entities and add a collision system to detect interactions between the player and enemies. If a collision happens, you can reduce health or trigger other events.
 
-   .. code-block:: cpp
+   ::
 
       engine.addSystem<CollisionSystem>();
 
@@ -111,7 +111,7 @@ If you want to make your game multiplayer, the engine has a **Networking Module*
 
 1. **Start the Game Server**: The server manages the game state and sends updates to clients.
 
-   .. code-block:: bash
+   ::
 
       ./rtype-server
 
