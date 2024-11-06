@@ -48,14 +48,33 @@ We chose SFML for handling all the graphics, input, and audio in our game. SFML 
 - **Cross-Platform**: It works on Windows, macOS, and Linux, which makes it easy to develop and run the game on different operating systems.
 - **Simple to Use**: SFML is easier to use than some other graphics libraries, which saves time in development.
 
-| Criterion                | SFML                      | SDL                  | Allegro            |
-|--------------------------|---------------------------|----------------------|--------------------|
-| **Platforms**             | Windows, macOS, Linux     | Windows, macOS,      | Windows, macOS,    |
-|                          |                           | Linux                | Linux              |
-| **2D Support**            | Yes                       | Yes                  | Yes                |
-| **Built-in Audio**        | Yes                       | Yes                  | Yes                |
-| **Ease of Use**           | Very simple               | Relatively complex   | Moderately simple  |
-| **Performance for 2D games** | Very good                | Good but slightly heavier | Good, but more focused on simple 2D |
+.. list-table::
+   :header-rows: 1
+
+   * - Criterion
+     - SFML
+     - SDL
+     - Allegro
+   * - Platforms
+     - Windows, macOS, Linux
+     - Windows, macOS, Linux
+     - Windows, macOS, Linux
+   * - 2D Support
+     - Yes
+     - Yes
+     - Yes
+   * - Built-in Audio
+     - Yes
+     - Yes
+     - Yes
+   * - Ease of Use
+     - Very simple
+     - Relatively complex
+     - Moderately simple
+   * - Performance for 2D games
+     - Very good
+     - Good but slightly heavier
+     - Good, but more focused on simple 2D
 
 
 SFML also includes built-in features for handling player input, such as detecting key presses and mouse movement, which are essential for the game controls.
@@ -68,6 +87,34 @@ We use TOML to handle configuration files in our project. This library helps us 
 - **Lightweight and Flexible**: TOML is compact and doesn't consume too much space or memory, which keeps the game efficient.
 - **Compatibility**: TOML's straightforward structure makes it easy to parse and flexible for adding new configuration options as the game evolves.
 
+.. list-table::
+   :header-rows: 1
+
+   * - Criterion
+     - TOML
+     - JSON
+     - YAML
+   * - Readability
+     - Very readable
+     - Readable
+     - Readable but can become complex
+   * - Ease of Modification
+     - Easy
+     - Easy
+     - Easy but requires careful formatting
+   * - Lightweight
+     - Very lightweight
+     - Lightweight
+     - Moderately lightweight
+   * - Comment Support
+     - Yes
+     - No
+     - Yes
+   * - Multi-language Compatibility
+     - Yes
+     - Yes
+     - Yes
+
 Cereal (Serialization Library)
 -------------------------------
 We use cereal for serializing and deserializing messages between components. The reasons we chose cereal include:
@@ -75,6 +122,34 @@ We use cereal for serializing and deserializing messages between components. The
 - **Lightweight Serialization**: cereal is optimized for performance, which is essential in real-time multiplayer games like ours.
 - **Cross-Platform**: It is compatible with multiple platforms, making it adaptable to various development environments.
 - **Supports Multiple Formats**: cereal can serialize data in different formats, allowing flexibility in data storage and transmission.
+
+.. list-table::
+   :header-rows: 1
+
+   * - Criterion
+     - Cereal
+     - Boost.Serialization
+     - Protobuf
+   * - Performance
+     - Excellent
+     - Excellent
+     - Excellent
+   * - Multi-platform Support
+     - Yes
+     - Yes
+     - Yes
+   * - Multiple Format Support
+     - Yes
+     - Yes
+     - No (binary format)
+   * - Ease of Use
+     - Simple
+     - Relatively complex
+     - Complex
+   * - Library Size
+     - Lightweight
+     - Heavy
+     - Lightweight
 
 Why These Libraries?
 ---------------------
