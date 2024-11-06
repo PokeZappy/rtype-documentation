@@ -39,11 +39,32 @@ The **ACTION** part tells the server what the client is trying to do. Here are t
 
 - **CONNECTION**: `0x01` -- Client asking to connect.
 - **DISCONNECT**: `0x02` -- Client asking to disconnect.
-- **MOVE_UP**: `0x03` -- Client moving up.
-- **MOVE_DOWN**: `0x04` -- Client moving down.
-- **MOVE_LEFT**: `0x05` -- Client moving left.
-- **MOVE_RIGHT**: `0x06` -- Client moving right.
-- **SHOOT**: `0x07` -- Client firing a projectile.
+- **INFORMATION**: `0x03` -- Client sending information.
+- **MOVE_UP**: `0x04` -- Client moving up.
+- **MOVE_DOWN**: `0x05` -- Client moving down.
+- **MOVE_LEFT**: `0x06` -- Client moving left.
+- **MOVE_RIGHT**: `0x07` -- Client moving right.
+- **MOVE_SINUSOIDAL**: `0x08` -- Client moving in a sinusoidal pattern.
+- **MOVE_TOP_DOWN**: `0x09` -- Client moving from top to down.
+- **MOVE_UP_STOP**: `0x0A` -- Client stopping upward movement.
+- **MOVE_DOWN_STOP**: `0x0B` -- Client stopping downward movement.
+- **MOVE_RIGHT_STOP**: `0x0C` -- Client stopping rightward movement.
+- **MOVE_LEFT_STOP**: `0x0D` -- Client stopping leftward movement.
+- **COLLISION**: `0x0E` -- Client reporting a collision.
+- **DEATH**: `0x0F` -- Client reporting death.
+- **START_SHOOT**: `0x10` -- Client starting to shoot.
+- **END_SHOOT**: `0x11` -- Client stopping shooting.
+- **START_STAGE**: `0x12` -- Client starting a stage.
+- **HURDLE**: `0x13` -- Client encountering a hurdle.
+- **DHURDLE**: `0x14` -- Client dealing with a hurdle.
+- **HIT**: `0x15` -- Client reporting a hit.
+- **SHOW_HITBOX**: `0x16` -- Client showing hitbox.
+- **UPDATE_SCORE**: `0x17` -- Client updating score.
+- **BOBBER**: `0x18` -- Client using bobber.
+- **PING**: `0x19` -- Client sending a ping.
+- **PONG**: `0x1A` -- Client responding with a pong.
+- **DROP**: `0x1B` -- Client dropping an item.
+- **RESET**: `0x1C` -- Client resetting the game.
 
 The **CLIENT_ID** and **ACTION** together allow the server to figure out what each player is doing.
 
