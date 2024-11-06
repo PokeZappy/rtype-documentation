@@ -13,7 +13,7 @@ Game Mechanics
 
 ### Player Control
 
-Players control their spaceship using keyboard inputs. Here are the main controls:
+Players control their spaceship using keyboard inputs. Here are the main by default controls:
 
 - **Move Up**: Use the `Z` key to move the ship upward.
 - **Move Down**: Use the `S` key to move the ship downward.
@@ -21,6 +21,11 @@ Players control their spaceship using keyboard inputs. Here are the main control
 - **Move Right**: Use the `D` key to move the ship to the right.
 - **Shoot**: Press the `Spacebar` to fire your weapons.
 - **Launch Game**: Press the `L` to launche the round.
+- **Settings Menu**: Press the `Escape` key to access the settings menu.
+- **Show Ping**: Press the `f9` key to show the ping.
+- **Hitbox**: Press the `H` key to show the hitbox.
+- **Tab**: Press the `Tab` key to show the scoreboard.
+- **Exit**: Press the `Escape` key to exit the game.
 
 ### Enemies
 
