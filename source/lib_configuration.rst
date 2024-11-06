@@ -51,27 +51,27 @@ We chose SFML for handling all the graphics, input, and audio in our game. SFML 
 .. list-table::
    :header-rows: 1
 
-   * - Criterion
-     - SFML
-     - SDL
-     - Allegro
-   * - Platforms
+   * - **X***
+     - **SFML**
+     - **SDL**
+     - **Allegro**
+   * - **Platforms**
      - Windows, macOS, Linux
      - Windows, macOS, Linux
      - Windows, macOS, Linux
-   * - 2D Support
+   * - **2D Support**
      - Yes
      - Yes
      - Yes
-   * - Built-in Audio
+   * - **Built-in Audio**
      - Yes
      - Yes
      - Yes
-   * - Ease of Use
+   * - **Ease of Use**
      - Very simple
      - Relatively complex
      - Moderately simple
-   * - Performance for 2D games
+   * - **Performance for 2D games**
      - Very good
      - Good but slightly heavier
      - Good, but more focused on simple 2D
