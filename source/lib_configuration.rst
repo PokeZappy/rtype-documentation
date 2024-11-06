@@ -51,30 +51,30 @@ We chose SFML for handling all the graphics, input, and audio in our game. SFML 
 .. list-table::
    :header-rows: 1
 
-   * - **X***
-     - **SFML**
-     - **SDL**
-     - **Allegro**
+   * - **X**
+     - **vcpkg**
+     - **Conan**
+     - **Homebrew**
    * - **Platforms**
      - Windows, macOS, Linux
      - Windows, macOS, Linux
-     - Windows, macOS, Linux
-   * - **2D Support**
-     - Yes
-     - Yes
-     - Yes
-   * - **Built-in Audio**
-     - Yes
-     - Yes
-     - Yes
+     - Mainly macOS, Linux
    * - **Ease of Use**
-     - Very simple
-     - Relatively complex
-     - Moderately simple
-   * - **Performance for 2D games**
-     - Very good
-     - Good but slightly heavier
-     - Good, but more focused on simple 2D
+     - Easy installation with simple commands
+     - Configurable but more complex
+     - Very simple on macOS
+   * - **Version Management**
+     - Yes
+     - Yes
+     - Yes, but less centralized
+   * - **Dependency Support**
+     - Large selection of libraries
+     - Large selection with flexibility
+     - Mainly for macOS
+   * - **Update Management**
+     - Simple and quick to manage
+     - More complex
+     - Depends on taprooms (repositories)
 
 
 SFML also includes built-in features for handling player input, such as detecting key presses and mouse movement, which are essential for the game controls.
