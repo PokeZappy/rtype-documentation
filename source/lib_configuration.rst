@@ -76,7 +76,6 @@ We chose SFML for handling all the graphics, input, and audio in our game. SFML 
      - More complex
      - Depends on taprooms (repositories)
 
-
 SFML also includes built-in features for handling player input, such as detecting key presses and mouse movement, which are essential for the game controls.
 
 TOML
